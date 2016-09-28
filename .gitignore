@@ -1,1 +1,5 @@
-*philosophers/
+# downloaded Wikipedia data
+philosophers/
+
+# IPython Notebook
+.ipynb_checkpoints
