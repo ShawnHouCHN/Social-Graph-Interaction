@@ -1,5 +1,8 @@
 # downloaded Wikipedia data
 philosophers/
 
+# downloaded nltk data
+nltk_data/
+
 # IPython Notebook
 .ipynb_checkpoints
