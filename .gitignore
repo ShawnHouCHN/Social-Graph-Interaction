@@ -1,6 +1,8 @@
 # downloaded Wikipedia data
 philosophers/
 wikispeedia/
+companies/
+
 
 # downloaded nltk data
 nltk_data/
