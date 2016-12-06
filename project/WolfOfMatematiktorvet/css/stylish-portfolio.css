@@ -499,6 +499,35 @@ section.world .overlay {
   left: 0;
 }
 
+section.class {
+  position: relative;
+  padding: 100px 0 100px 100px;
+}
+
+section.class .class-content {
+  position: relative;
+  z-index: 1;
+}
+section.class .class-content h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: white;
+  font-size: 40px;
+}
+@media (min-width: 768px) {
+  section.class .class-content h2 {
+    font-size: 70px;
+  }
+}
+section.class .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 .arrow-wrap {
   position:absolute;
@@ -557,3 +586,59 @@ section.world .overlay {
     -webkit-animation: arrows 2.8s 0.4s;
     -webkit-animation-delay: 3s;
   }
+
+.centeredRows {
+  float: none;
+  margin: 0 auto;
+}
+
+section.content1 {
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../img/studying.jpg');
+  padding: 100px;
+}
+
+section.content1 .opn-content {
+  position: relative;
+  z-index: 1;
+}
+section.content1 .opn-content h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: white;
+  max-width: 450px;
+  font-size: 40px;
+}
+@media (min-width: 768px) {
+  section.content1 .opn-content h2 {
+    font-size: 70px;
+  }
+}
+section.content1 .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section.foundedDefunct {
+  position: relative;
+  padding: 100px;
+}
+
+section.foundedDefunct .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -99;
+}
