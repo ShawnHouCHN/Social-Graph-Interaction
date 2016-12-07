@@ -132,7 +132,7 @@
                     Project <font color="#fdcc52"><b>Motivation</b></font><br>
 
                     <font size="5" class="pull-left">
-                        We were able to extract about 50,000 companies articles from <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>. Based on the knowledge we<br>
+                        We were able to extract about 50,000 company articles from <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>. Based on the knowledge we<br>
                         gained in the <a href="http://www.dtu.dk/" target="_blank">DTU</a> course <a href="http://kurser.dtu.dk/course/02805" target="_blank">02805 Social Graphs and Interactions</a>,
                         we wanted to gain more insights into<br>
                         the network of companies with the help of graph theory.<br><br>
@@ -143,9 +143,8 @@
                         <br><br>
                         Running several network analyses, the goal is to find interesting facts about communities, most central<br>
                         companies and so on. After, a sentiment analysis will be conducted to identify trends about key<br>
-                        companies by analyzing tweets from <a href="https://twitter.com/" target="_blank">Twitter</a>.
+                        companies from tweets on <a href="https://twitter.com/" target="_blank">Twitter</a>.
                     </font>
-                        
                 </h2>
             </div>
         </div>
@@ -159,7 +158,7 @@
                     <font color="#fdcc52"><b>Rediscover</b></font> the World<br>
 
                     <font size="5" class="pull-right">
-                        The constructed directed network graph to the right contains<br>
+                        The constructed directed network graph to the left contains<br>
                         56898 nodes and 150662 edges. Each node represents a<br>
                         company with an edge being a link between two companies.<br>
                         Download the <a href="https://drive.google.com/file/d/0Byd_stTDMHZAVTdEV0xsVXpTSjg/view" target="_blank">dataset</a>
@@ -172,7 +171,7 @@
                         employer?<br><br>
 
                         Find out more below. For additional information behind<br>
-                        the scenes check out an <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" target="_blank">iPython explainer notebook</a>.
+                        the scenes check out this <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" target="_blank">iPython explainer notebook</a>.
                     </font>
                         
                 </h2>
@@ -189,12 +188,12 @@
                     <font size="6">Preliminary Analysis:</font><br><font color="#fdcc52"><b>History</b></font> of Companies<br>
                         <font size="5" class="pull-left">
                             <br>
-                            The preliminary analysis contains no network analysis but is simply an overview of the extracted data. The below plot is the distribution of founded/defunct companies, extracted from the data source, after the year 1800.<br><br>
+                            The preliminary analysis contains no network analysis, but is a simple overview of the extracted data. The below plot is the distribution of founded/defunct companies, extracted from the data source, after the year 1800.<br><br>
                         </font>
                 </h2>
 
                 <center>
-                    <img src="img/1800distributionTransparent.png" width="100%" class="img-responsive">
+                    <img src="img/founded_defunct.png" width="100%" class="img-responsive">
                 </center>
 
                 <h2 class="pull-left text-justify" style="margin-right:-120px;">
@@ -241,7 +240,7 @@
                         <font size="5" class="pull-left">
                             <br>
                             The heat maps below show how distributed companies are spread across the world. The locations collected from Wikipedia were annotated with GPS coordinates from OpenStreetMap's <a href="http://wiki.openstreetmap.org/wiki/Nominatim" target="_blank">Nominatim</a>.<br><br>
-                            Switch between the taps below to display different focus areas.<br><br>
+                            Switch between the tabs below to display different focus areas.<br><br>
                         </font>
                 </h2>
 
@@ -800,23 +799,11 @@
                     </div>
                 </div>
 
-
-                <br><br>
-                <font size="5" class="pull-left">
-                    Nodes (companies) with higher degree centrality were tried to be highlighted in the figure below. There are also isolated nodes visible on the outside.
-                </font>
-                <br><br><br><br><br>
-
-                <center>
-                    <img src="img/hairball.png" class="img-responsive">
-                </center>
-
-
                 <br><br>
                 <font size="5" class="pull-left text-justify">
                     The top companies according to the eigenvector centrality are all within the entertainment sector. Since there is a large amount of entertainment companies one reason for a high centrality could be a good interconnection between all of them with the highest degree connections to other nodes in other communities. One way to ensure is to find out more about the main communities in the next part. Eigenvector centrality might be influenced by strongly connected communities.
                     <br><br>
-                    The picture below shows a visualization of the nodes according to their eigenvector centrality. The eigenvector centrality is only calculated for directed graphs but this gave us another angle on the matter.
+                    The picture below shows a visualization of the nodes according to their eigenvector centrality. The eigenvector centrality is only calculated for directed graphs, which presents another angle on the matter.
                 </font>
 
                 <center>
@@ -827,7 +814,7 @@
                 <font size="5" class="pull-left text-justify">
                     Besides mainly supporting the fact that there are lots of companies with high eigenvector centrality at the west coast of the USA, there are also other large spots spread across. Most notably is the node on the top of the coast. The nodes are not at their exact location to avoid overlapping but it is Microsoft in Redmond close to Seattle.
                     <br><br>
-                    So apart from the giants of the movie industry in Hollywood in the Los Angeles area the undirected version also shows many Californian companies like Apple with high centrality. That's because in an undirected graph Microsoft is the most central because of the high number of in-edges which influences the ranks among many big technology companies. When it comes to collaboration however movie companies are better at connecting "out" to others.
+                    So apart from the giants of the movie industry in Hollywood in the Los Angeles area the undirected version also shows many Californian companies like Apple with high centrality. That's because in an undirected graph Microsoft is the most central because of the high number of in-edges which influences the ranks among many big technology companies. When it comes to collaboration however, movie companies are better at connecting "out" to others.
                 </font>
             </div>
         </div>
@@ -900,7 +887,7 @@
                                 <li>Computers & hardware</li>
                                 <li>Consumer goods</li>
                                 <li>Aerospace & Defense</li>
-                                <li>Clothing</li>
+                                <li>Department Stores</li>
                                 <li>Media & TV</li>
                                 <li>Japanese animations & studios</li>
                                 <li>Social media</li>
@@ -959,6 +946,8 @@
                 <br>
                 <font size="5" class="pull-left text-justify">
                     From the visualization it can be concluded that high degree nodes definitely generally have a higher number of employees. But there are companies like UPS (Georgia) that have a lower degree than Bank of America (close to UPS) or HP (LA area) but much more employees.
+                    <br><br>
+                    For an interactive visualization of the network, click <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/website/network_us" target="_blank">here</a>.
                 </font>
 
             </div>
@@ -1021,6 +1010,10 @@
                 <center>
                     <img src="img/dk.png" class="img-responsive">
                 </center>
+
+                <font size="5" class="pull-left text-justify">
+                    For an interactive visualization of the network, click <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/website/network_dk" target="_blank">here</a>.
+                </font>
 
             </div>
 
@@ -1125,16 +1118,17 @@
                 <center>                    
                     <font size="6">
                         <br><br>
-                        Infomap
+                        Infomap <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/website/network_infomap" target="_blank">(interactive)</a>
                     </font>
 
                     <img src="img/infomap.png" class="img-responsive">
 
                     <font size="6">
                         <br><br>
-                        Gephi
+                        Gephi <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/website/network_fast_unfolding" target="_blank">(interactive)</a>
                     </font>
                     <img src="img/gephi.png" class="img-responsive">
+
                 </center>
 
 
@@ -1269,7 +1263,7 @@
 
                     <br>
                     <font size="5" class="pull-left text-justify">
-                        These scores paint a very different picture of Samsung in this case. The reason the significant different in tweets might be due to all the commercials sent out on Twitter to paint a happier picture of Samsung - especially in a time filled with product recalls and scandals.
+                        These scores paint a very different picture of Samsung in this case. The reason for the significant difference in tweets might be due to all the commercials sent out on Twitter to paint a happier picture of Samsung - especially in a time filled with product recalls and scandals.
                         <br><br>
                         Each set of words gets an average score to find out if people tweet more happy or negatively about a company. Samsung scores on a weighted average <b>95.6</b> positive and <b>59.8</b> negative scores, meaning that tweets about Samsung are generally more positive than negative (within the tweets collected). Once again, these tweets include commercials and similar to portrait a different picture of the company. Similar methods are used in SEO.
                     </font>
@@ -1294,10 +1288,10 @@
                     </h2>
 
                 <font size="4" class="pull-left text-justify">
-                    [1] "How Automakers Accelerated Out of the Great Depression". David Rhodes and Daniel Stelter. February 16, 2010. Last online accessed: 05.12.2016.<br>
-                    [2] Aerospace History. Wikipedia. Last online accessed: 06.12.2016.<br>
-                    [3] Vincent D. Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Etienne Lefebvre - Fast unfolding of communities in large networks (2008)<br>
-                    [4] University of Chieti-Pescara, Teaching notes. Last online accessed: 03.12.2016<br>
+                    <a href="https://www.bcgperspectives.com/content/articles/automotive_management_slow_growth_economy_how_automakers_accelerated_out_of_the_great_depression/" target="_blank">[1]</a> "How Automakers Accelerated Out of the Great Depression". David Rhodes and Daniel Stelter. February 16, 2010. Last online accessed: 05.12.2016.<br>
+                    <a href="https://en.wikipedia.org/wiki/Aerospace#History" target="_blank">[2]</a> Aerospace History. Wikipedia. Last online accessed: 06.12.2016.<br>
+                    <a href="http://lanl.arxiv.org/abs/0803.0476" target="_blank">[3]</a> Vincent D. Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Etienne Lefebvre - Fast unfolding of communities in large networks (2008)<br>
+                    <a href="http://www.sci.unich.it/~francesc/teaching/network/katz.html" target="_blank">[4]</a> University of Chieti-Pescara, Teaching notes. Last online accessed: 03.12.2016<br>
                 </font>
 
 
