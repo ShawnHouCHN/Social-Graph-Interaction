@@ -55,23 +55,48 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#top" onclick=$("#menu-close").click();>Home</a>
-                    </li>
-                    <li>
                         <a href="#intro" onclick=$("#menu-close").click();>Intro</a>
                     </li>
-                    <li>
-                        <a href="#prelim" onclick=$("#menu-close").click();>Preliminary Analysis</a>
+        
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Preliminary Analysis <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#prelim">History of Companies</a></li>
+                            <li><a href="#historyOfIndustries">History of Industries</a></li>
+                            <li><a href="#globalScatter">Global Locations of Companies</a></li>
+                            <li><a href="#entertaining">Entertaining Statistics</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#about" onclick=$("#menu-close").click();>Advanced Analysis</a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Network ANalysis <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#network">Centrality</a></li>
+                            <li><a href="#communities">Hidden Communities</a></li>
+                            <li><a href="#uscomp">US Company Network</a></li>
+                            <li><a href="#dkcomp">Denmark Company Network</a></li>
+                            <li><a href="#5largest">Top 5 Largest Communities</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#services" onclick=$("#menu-close").click();>Twitter</a>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sentiment Analysis <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#sentiment">Wordclouds</a></li>
+                            <li><a href="#happy">Happiness in Companies</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" onclick=$("#menu-close").click();><b>Download study</b></a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Download study</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://nbviewer.jupyter.org/url/shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" target="_blank">iPython Notebook (Preview)</a></li>
+                            <li><a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" target="_blank">iPython Notebook (Download)</a></li>
+                            <li><a href="https://drive.google.com/file/d/0Byd_stTDMHZAVTdEV0xsVXpTSjg/view" target="_blank">Reduced network (Download)</a></li>
+                            <li><a href="https://drive.google.com/file/d/0Byd_stTDMHZAeDM5NEtQTlU3M3c/view" target="_blank">Merged data (Download)</a></li>
+                        </ul>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -79,22 +104,21 @@
 
     <!-- Header -->
     <header id="top" class="header">
-        <!--<canvas id="canvas" class="pullback animate-start" data-animations="fadeIn" data-animation-delay="8s" data-animation-duration="4s"></canvas>-->
+        <canvas id="canvas" class="pullback animate-start" data-animations="fadeIn" data-animation-delay="4s" data-animation-duration="4s"></canvas>
         <div class="container">
-            <div class="row">
+            <div class="row display-table">
                 <div class="col-sm-7">
                     <div class="header-content">
-                        <canvas id="canvas" class="pullback animate-start" data-animations="fadeIn" data-animation-delay="4s" data-animation-duration="2s"></canvas>
                         <div class="header-content-inner">
                             <span style="font-size:50px;" class="text-uppercase animate-start" data-animations="fadeInUp" data-animation-delay="1s" data-animation-duration="2s">Wolf of Matematiktorvet</span><br><br><br>
                             <h3 style="margin-top:-20px;" class="animate-start" data-animations="fadeInDown" data-animation-delay="2s" data-animation-duration="2s">Discover the hidden communities of this world.</h3>
                             <br>
-                            <center><a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" class="btn btn-outline-black btn-xl page-scroll animate-start" data-animations="fadeIn" data-animation-delay="3s" data-animation-duration="2s">Download the study here</a></center>
+                            <center><a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" class="btn btn-outline-black btn-xl page-scroll animate-start" data-animations="fadeIn" data-animation-delay="3s" data-animation-duration="2s" target="_blank">Download the study here</a></center>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5">
-                    <iframe class="vcenterVideo" width="572" height="321" src="https://www.youtube.com/embed/HNrX5dCCrNw?list=LLbdvTWQRtUMIi9wXoEp3vuw" frameborder="0" allowfullscreen></iframe>
+                <div class="col-sm-5 display-cell">
+                        <iframe class="vcenterVideo" width="572" height="321" src="https://www.youtube.com/embed/HNrX5dCCrNw?list=LLbdvTWQRtUMIi9wXoEp3vuw" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -108,10 +132,18 @@
                     Project <font color="#fdcc52"><b>Motivation</b></font><br>
 
                     <font size="5" class="pull-left">
-                        Wikipedia contains more than 50,000 notable companies. The data is gathered from articles about companies,<br>
-                        including type, industry, location and more. Running several network analyses, the goal is to find interesting<br>
-                        facts like hidden communities that are not only formed by type, industry or country. At the same time, a sentiment<br>
-                        analysis will be conducted to identify trends about key companies.
+                        We were able to extract about 50,000 companies articles from <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>. Based on the knowledge we<br>
+                        gained in the <a href="http://www.dtu.dk/" target="_blank">DTU</a> course <a href="http://kurser.dtu.dk/course/02805" target="_blank">02805 Social Graphs and Interactions</a>,
+                        we wanted to gain more insights into<br>
+                        the network of companies with the help of graph theory.<br><br>
+
+                        Each company article contains a template to extract additional company properties including type,<br>
+                        industry, location, key people and more, in total up to 30 attributes. Download the <a href="https://drive.google.com/file/d/0Byd_stTDMHZAeDM5NEtQTlU3M3c/view" target="_blank">raw data</a> (Python<br>
+                        dictionary as pickle file) to conduct some research yourself.
+                        <br><br>
+                        Running several network analyses, the goal is to find interesting facts about communities, most central<br>
+                        companies and so on. After, a sentiment analysis will be conducted to identify trends about key<br>
+                        companies by analyzing tweets from <a href="https://twitter.com/" target="_blank">Twitter</a>.
                     </font>
                         
                 </h2>
@@ -124,18 +156,23 @@
         <div class="worlds-content">
             <div class="container">
                 <h2 class="pull-right" style="margin-right:-120px;">
-                    <font color="#fdcc52"><b>Rediscover</b></font> the world.<br>
+                    <font color="#fdcc52"><b>Rediscover</b></font> the World<br>
 
                     <font size="5" class="pull-right">
-                        By analyzing the companies on Wikipedia, 56898 nodes<br>
-                        and 1055939 edges were identified.
-                        <br><br>
-                        Surprising interconnections between these companies<br>
-                        where revealed. Which company is the biggest? Who is<br>
-                        the most connected? If one giant connected component<br>
-                        were to collapse, would the rest follow?<br><br>
+                        The constructed directed network graph to the right contains<br>
+                        56898 nodes and 150662 edges. Each node represents a<br>
+                        company with an edge being a link between two companies.<br>
+                        Download the <a href="https://drive.google.com/file/d/0Byd_stTDMHZAVTdEV0xsVXpTSjg/view" target="_blank">dataset</a>
+                        (NetworkX object as pickle file) and try<br>
+                        it yourself.<br><br>
 
-                        Find out more below.
+                        Surprising interconnections between these companies where<br>
+                        revealed: Who is the most connected? Where are companies<br>
+                        located? Which company is the biggest and most central<br>
+                        employer?<br><br>
+
+                        Find out more below. For additional information behind<br>
+                        the scenes check out an <a href="https://shawnhouchn.github.io/Social-Graph-Interaction/project/project_assignmentB.ipynb" target="_blank">iPython explainer notebook</a>.
                     </font>
                         
                 </h2>
@@ -162,16 +199,16 @@
 
                 <h2 class="pull-left text-justify" style="margin-right:-120px;">
                     <font size="5" class="pull-left">
-                        Generally, the amount of companies increases gradually along the time. Especially after the millennium there were many foundations. Many companies were dissolved after the global financial crisis in 2008. In the last 3 years the numbers all drop a bit but that could very well be because lately founded companies are not as successful yet to create an article on Wikipedia.
+                        Generally, the amount of companies increases gradually along the time. Especially after the millennium there were many foundations. Many companies were dissolved after the global financial crisis in 2008. There is a valley for foundations in the 1940s which could be caused by the second world war. After the war years there is a big increase possibly influenced by the Marshall Plan in Western Europe. In the last 3 years from now the numbers overall drop a bit but that could very well be, because lately founded companies are not as successful yet to create an article on Wikipedia.
                     </font>
                 </h2>
 
-                <h2 class="pull-left" style="margin-right:-120px;">
+                <h2 id="historyOfIndustries" class="pull-left" style="margin-right:-120px;">
                     <br>
                     <span class="pull-right"><font color="#fdcc52"><b>History</b></font> of Industries</span><br>
                         <font size="5" class="pull-left">
                             <br>
-                            The plot is the distribution of the top 5 industries with the highest amount of founded/defunct companies after the year 1800. All industries have been analysed, but only the top 5 are shown in the plot for clearer illustrations.<br><br>
+                            The plot shows the distribution of the 5 industries with the highest amount of founded or defunct companies after the year 1800.<br><br>
                         </font>
                 </h2>
 
@@ -181,13 +218,8 @@
 
                 <h2 class="pull-left text-justify" style="margin-right:-120px;">
                     <font size="5" class="pull-left">
-                        <ul>
-                            <li>The automobile industry remained silent and was suddenly boosted rapidly after 1900. Several historical events took place. Prior to 1900, the automobile was really a novelty item, but in 1908, Ford created the Model T, which became the first car aggressively marketed to the average family. Commercialization began, but the number dropped in the next decade again because of the great depression in 1929 but accelerated again soon after [1].<br><br></li>
-                            <li>The software industry really starts around the 80s with the emergence of computer technology.<br><br></li>
-                            <li>The communication industry also rocketed similar to software companies with the emergence of the computer and internet.<br><br></li>
-                            <li>The amount of companies founded in retail and finance increased steadily along the time.</li>
-                        </ul>
-                        <br>
+                        The automobile industry remained silent and was suddenly boosted rapidly after 1900. Several historical events took place: Prior to 1900, the automobile was really a novelty item, but in 1908, Ford created the Model T, which became the first car aggressively marketed to the average family. Commercialization began, but the number dropped in the next decade again because of the great depression in 1929, but was accelerated again soon after [1].
+                        <br><br>
                     </font>
                 </h2>
 
@@ -197,21 +229,19 @@
 
                 <h2 class="pull-left text-justify" style="margin-right:-120px;">
                     <font size="5" class="pull-left">
-                        <ul>
-                            <li>The financial industry had a stable increasing rate/trend of dissolutions until 1980-2000 where it made an increase of dissolutions of over 100%. Today the amount of defunct financial companies remains twice as high as compared to the 1960-1980 period.<br><br></li>
-                            <li>The number of high defunct rate correlates with the number of low foundation rate in the automobile industry in 1900-1920. Car manufacturing at that time is comparable to internet entrepreneurialism nowadays. But the high competition and economy crises led to a demise of companies in the car industry.<br><br></li>
-                            <li>Same can be said for the aerospace industry. The development of aerospace industry is a byproduct of the world wars and the cold war afterwards. At the beginning of 80s, the space shuttle Columbia launched, the start of regular manned access to orbital space. After Space commercialization and space tourism and nowadays projects like SpaceX are gaining ground [2]. However, due to the immature technologies, industrial uncertainty and high cost in R&D, many companies failed to keep up with the speed thus ended to be defunct.<br><br></li>
-                            <li>The amount of companies defunct in the retail and manufacturing industry generally complies to the incremental tendency along time.</li>
-                        </ul>
+                        The number of a high defunct rate correlates with the number of low foundation rate in the automobile industry in 1900-1920. Car manufacturing at that time is comparable to internet entrepreneurship nowadays. But the high competition and economy crises led to a demise of companies in the car industry.
+                        <br><br>
+                        Same as for the automobile industry can be said for the aerospace industry. Its development is a byproduct of the world wars and the cold war afterwards. Rocket engines were also used for missiles and aircrafts. Many milestones like the space shuttle Columbia, the space station "Mir" and "ISS" were made in the 80s. After space commercialization and space tourism and nowadays projects like SpaceX are gaining ground [2]. However, due to the immature technologies, industrial uncertainty and high cost in R&D, many companies failed to keep up with the speed and thus ended to be defunct.
                     </font>
                 </h2>
 
-                <h2 class="pull-left" style="margin-right:-120px;">
+                <h2 id="globalScatter" class="pull-left" style="margin-right:-120px;">
                     <br>
-                    <span class="pull-left"><font color="#fdcc52"><b>Global</b></font> Scatter of Companies</span><br>
+                    <span class="pull-left"><font color="#fdcc52"><b>Global</b></font> Locations of Companies</span><br>
                         <font size="5" class="pull-left">
                             <br>
-                            The heat maps below show how distribution of the companies are spread across the world. The data collected from Wikipedia mostly represents the US and Europe, however still covers most of the world. <br><br>
+                            The heat maps below show how distributed companies are spread across the world. The locations collected from Wikipedia were annotated with GPS coordinates from OpenStreetMap's <a href="http://wiki.openstreetmap.org/wiki/Nominatim" target="_blank">Nominatim</a>.<br><br>
+                            Switch between the taps below to display different focus areas.<br><br>
                         </font>
                 </h2>
 
@@ -231,7 +261,7 @@
                         </center>
                         <br>
                         <font size="5" class="pull-left">
-                            The global hot spots appear mostly in east and west coasts of the United States as well as western Europe.
+                            Global hot spots appear especially on the east and west coasts of the United States as well as Western Europe.
                         </font>
                     </div>
 
@@ -261,19 +291,19 @@
                         </center>
                         <br>
                         <font size="5" class="pull-left">
-                            In Asia there is not as many company distributions also because there is probably not as much data.
+                            In Asia there are not as many company distributions outside cities, also because there is probably not as much data for some countries.
                         </font>
                     </div>
                 </div>
                 </center>
 
-                <h2 class="pull-right" style="margin-right:-120px;">
+                <h2 id="entertaining" class="pull-right" style="margin-right:-120px;">
                     <br>
                     <span class="pull-right"><font color="#fdcc52"><b>Entertaining</b></font> Statistics</span><br>
                     <br>
                 </h2>
 
-            <font size="3px">
+            <font size="4px">
             <div class="row text-center">
                 <div class="col-lg-12">
                     <div class="row">
@@ -289,9 +319,9 @@
                                         Tata Group<br>
                                         G4S plc<br>
                                         Volkswagen AG<br>
-                                        Volkswagen<br>
                                         People Ready<br>
                                         OAO RAO UES<br>
+                                        Bahria Town Private Limited.<br>
                                     </div>
 
                                     <div class="col-md-4 text-right">
@@ -303,8 +333,8 @@
                                         618000<br>
                                         610076<br>
                                         610000<br>
-                                        600000<br>
                                         577000<br>
+                                        550000<br>
                                     </div>
 
                                 </div>
@@ -395,93 +425,61 @@
 
     </section>
 
-    <section class="content1">
+    <section id="network" class="content1">
         <div class="content1-content">
             <div class="container-fluid">
                 <h2 class="pull-left" style="margin-right:-120px;">
-                    <font size="6">Advanced Analysis:</font><br>Who really <font color="#fdcc52"><b>controls</b></font> the world?<br>
+                    <font size="6">Advanced Network Analysis:</font><br>Who really <font color="#fdcc52"><b>controls</b></font> the world?<br>
                     <br>
                     <font size="5px" class="pull-left">
-                        The constructed network revealed certain information that would not otherwise be available by looking at Wikipedia.
+                        The constructed directed graph revealed certain information that would otherwise not be available by a simple study of Wikipedia articles.
                         <br>Below is the top 10 companies within each category:
                         <br><br>
                     </font>
                 </h2>
 
-
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">Global</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Europe</a></li>
-                    <li><a data-toggle="tab" href="#menu2">United States</a></li>
-                    <li><a data-toggle="tab" href="#menu3">Asia</a></li>
+                <ul class="nav nav-tabs" style="clear:both">
+                    <li class="active"><a data-toggle="tab" href="#degree">Degree centrality</a></li>
+                    <li><a data-toggle="tab" href="#between">Betweenness centrality</a></li>
+                    <li><a data-toggle="tab" href="#eigen">Eigenvector centrality</a></li>
+                    <li><a data-toggle="tab" href="#closeness">Closeness centrality</a></li>
+                    <li><a data-toggle="tab" href="#katz">Katz centrality</a></li>
                 </ul>
 
+                <div class="tab-content">
+                    <div id="degree" class="tab-pane fade in active">
+                            
                     <font size="4px">
                         <div class="row centeredRows">
-                            <div class="col-md-4">
-                                <font size="6px" class="pull-left text-center">Most links:</font>
-                                <br><br>
-                                <div class="row">
-                                    <div class="col-md-8 text-left">
-                                        Telia Company AB:<br>
-                                        Hitachi, Ltd.:<br>
-                                        Vodafone Group:<br>
-                                        Sony Corporation:<br>
-                                        Panasonic Corporation:<br>
-                                        Toshiba Corporation:<br>
-                                        Kyocera Corporation:<br>
-                                        Mitsubishi Electric Corporation:<br>
-                                        Comcast Corporation:<br>
-                                        Fujitsu Ltd.:
-                                    </div>
-
-                                    <div class="col-md-4 text-right">
-                                        529<br>
-                                        524<br>
-                                        519<br>
-                                        511<br>
-                                        489<br>
-                                        488<br>
-                                        487<br>
-                                        466<br>
-                                        461<br>
-                                        460<br>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-md-offset-2">
                                 <font size="6px" class="pull-left">In-degree centrality:</font>
                                 <br><br>
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         Microsoft:<br>
-                                        Reuters:<br>
-                                        Sony:<br>
-                                        Google:<br>
                                         IBM:<br>
-                                        HSBC:<br>
-                                        Vodafone:<br>
+                                        Google:<br>
                                         Apple Inc.:<br>
-                                        Nintendo:<br>
-                                        Deutsche Bank:<br>
+                                        Sony:<br>
+                                        General Motors:<br>
+                                        Intel:<br>
+                                        BBC:<br>
+                                        General Electric:<br>
+                                        Hewlett-Packard:<br>
                                     </div>
 
                                     <div class="col-md-6 text-right">
-                                        0.0283<br>
-                                        0.0274<br>
-                                        0.0204<br>
-                                        0.0193<br>
-                                        0.018<br>
-                                        0.0172<br>
-                                        0.0168<br>
-                                        0.016<br>
-                                        0.0164<br>
-                                        0.016<br>
+                                        0.0228<br>
+                                        0.0144<br>
+                                        0.0132<br>
+                                        0.0115<br>
+                                        0.0108<br>
+                                        0.0103<br>
+                                        0.0094<br>
+                                        0.0089<br>
+                                        0.0089<br>
+                                        0.0085<br>
                                     </div>
 
                                 </div>
@@ -520,10 +518,788 @@
 
                                 </div>
 
+                            </div>
+                        </div>
+                    </font>
+                </div>
+
+                    <div id="between" class="tab-pane fade">
+
+                    <font size="4px">
+                        <div class="row centeredRows">
+                            <div class="col-md-4 col-md-offset-4">
+                                <font size="6px" class="pull-left text-center">Betweenness centrality:</font>
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-8 text-left">
+                                        General Electric:<br>
+                                        General Motors:<br>
+                                        Apple Inc.:<br>
+                                        IBM:<br>
+                                        Sony:<br>
+                                        Google:<br>
+                                        Bain Capital:<br>
+                                        Microsoft:<br>
+                                        Kohlberg Kravis Roberts:<br>
+                                        Samsung:
+                                    </div>
+
+                                    <div class="col-md-4 text-right">
+                                        0.0276<br>
+                                        0.0208<br>
+                                        0.0185<br>
+                                        0.0181<br>
+                                        0.0158<br>
+                                        0.0138<br>
+                                        0.0138<br>
+                                        0.0132<br>
+                                        0.0131<br>
+                                        0.0131<br>
+                                    </div>
+
+                                </div>
 
                             </div>
                         </div>
                     </font>
+
+                    </div>
+
+                    <div id="eigen" class="tab-pane fade">
+
+                    <font size="4px">
+                        <div class="row centeredRows">
+                            <div class="col-md-4">
+                                <font size="6px" class="pull-left text-center">In-edges:</font>
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-8 text-left">
+                                        Paramount Pictures<br>
+                                        Warner Bros.<br>
+                                        Metro-Goldwyn-Mayer<br>
+                                        Columbia Pictures<br>
+                                        The Walt Disney Company<br>
+                                        Universal Studios<br>
+                                        20th Century Fox<br>
+                                        Time Warner<br>
+                                        Viacom<br>
+                                        United Artists<br>
+                                    </div>
+
+                                    <div class="col-md-4 text-right">
+                                        0.2798<br>
+                                        0.2561<br>
+                                        0.2223<br>
+                                        0.2099<br>
+                                        0.2063<br>
+                                        0.2029<br>
+                                        0.2019<br>
+                                        0.1638<br>
+                                        0.1565<br>
+                                        0.1458<br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <font size="6px" class="pull-left">Out-edges:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        Paramount Pictures<br>
+                                        Warner Bros.<br>
+                                        Metro-Goldwyn-Mayer<br>
+                                        HBO<br>
+                                        StudioCanal<br>
+                                        Participant Media<br>
+                                        Sony Pictures<br>
+                                        PolyGram Filmed<br>
+                                        Screen Gems<br>
+                                        MGM Home<br>
+                                    </div>
+
+                                    <div class="col-md-6 text-right">
+                                        0.1435<br>
+                                        0.1309<br>
+                                        0.1299<br>
+                                        0.1270<br>
+                                        0.1200<br>
+                                        0.1176<br>
+                                        0.1162<br>
+                                        0.1155<br>
+                                        0.1147<br>
+                                        0.1116<br>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <font size="6px" class="pull-left">Undirected:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        Microsoft<br>
+                                        IBM<br>
+                                        Apple Inc.<br>
+                                        Google<br>
+                                        Sony<br>
+                                        Intel<br>
+                                        Hewlett-Packard<br>
+                                        Dell<br>
+                                        Warner Bros.<br>
+                                        Paramount Pictures<br>
+                                    </div>
+
+                                    <div class="col-md-6 text-right">
+                                        0.3143<br>
+                                        0.1882<br>
+                                        0.1657<br>
+                                        0.1576<br>
+                                        0.1493<br>
+                                        0.1420<br>
+                                        0.1289<br>
+                                        0.1096<br>
+                                        0.1092<br>
+                                        0.1027<br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </font>
+
+                    </div>
+
+                    <div id="closeness" class="tab-pane fade">
+
+                    <font size="4px">
+                        <div class="row centeredRows">
+                            <div class="col-md-4 col-md-offset-4">
+                                <font size="6px" class="pull-left text-center">Closeness centrality:</font>
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-8 text-left">
+                                        Dansk Supermarked<br>
+                                        Tor Line<br>
+                                        Maersk<br>
+                                        DFDS<br>
+                                        Mols-Linien<br>
+                                        DADES<br>
+                                        Vestas<br>
+                                        Fakta<br>
+                                        Netto (store)<br>
+                                        NNIT<br>
+                                    </div>
+
+                                    <div class="col-md-4 text-right">
+                                        0.1240<br>
+                                        0.1209<br>
+                                        0.1150<br>
+                                        0.1134<br>
+                                        0.1119<br>
+                                        0.1045<br>
+                                        0.0973<br>
+                                        0.0957<br>
+                                        0.0896<br>
+                                        0.0887<br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </font>
+                </div>
+
+                    <div id="katz" class="tab-pane fade">
+
+                    <font size="4px">
+                        <div class="row centeredRows">
+                            <div class="col-md-5 col-md-offset-1">
+                                <font size="6px" class="pull-left text-center">In-edges:</font>
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-8 text-left">
+                                        Ford Motor Company<br>
+                                        The Walt Disney Company<br>
+                                        Toyota<br>
+                                        Mercedes-Benz<br>
+                                        Chrysler<br>
+                                        Daimler AG<br>
+                                        Walt Disney Pictures<br>
+                                        Chevrolet<br>
+                                        Dodge<br>
+                                        Volkswagen<br>
+                                    </div>
+
+                                    <div class="col-md-4 text-right">
+                                        0.2787<br>
+                                        0.2075<br>
+                                        0.1816<br>
+                                        0.1713<br>
+                                        0.1597<br>
+                                        0.1376<br>
+                                        0.1324<br>
+                                        0.1318<br>
+                                        0.1269<br>
+                                        0.1219<br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-5">
+                                <font size="6px" class="pull-left">Out-edges:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        Warner Bros. Television<br>
+                                        Village Roadshow Pictures<br>
+                                        Spyglass Entertainment<br>
+                                        Dodge<br>
+                                        Amblin Entertainment<br>
+                                        The Herb Chambers Companies<br>
+                                        Warner Bros. Family<br>
+                                        Imagine Entertainment<br>
+                                        The Kennedy/Marshall Company<br>
+                                        Ford Motor Company<br>
+                                    </div>
+
+                                    <div class="col-md-6 text-right">
+                                        0.1324<br>
+                                        0.1298<br>
+                                        0.1191<br>
+                                        0.1169<br>
+                                        0.1164<br>
+                                        0.1094<br>
+                                        0.1080<br>
+                                        0.1073<br>
+                                        0.0965<br>
+                                        0.0954<br>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </font>
+
+                    </div>
+
+                    </div>
+                </div>
+
+
+                <br><br>
+                <font size="5" class="pull-left">
+                    Nodes (companies) with higher degree centrality were tried to be highlighted in the figure below. There are also isolated nodes visible on the outside.
+                </font>
+                <br><br><br><br><br>
+
+                <center>
+                    <img src="img/hairball.png" class="img-responsive">
+                </center>
+
+
+                <br><br>
+                <font size="5" class="pull-left text-justify">
+                    The top companies according to the eigenvector centrality are all within the entertainment sector. Since there is a large amount of entertainment companies one reason for a high centrality could be a good interconnection between all of them with the highest degree connections to other nodes in other communities. One way to ensure is to find out more about the main communities in the next part. Eigenvector centrality might be influenced by strongly connected communities.
+                    <br><br>
+                    The picture below shows a visualization of the nodes according to their eigenvector centrality. The eigenvector centrality is only calculated for directed graphs but this gave us another angle on the matter.
+                </font>
+
+                <center>
+                    <img src="img/eigenvectorWorld.png" class="img-responsive" style="padding-top: 50px;">
+                </center>
+
+                <br><br>
+                <font size="5" class="pull-left text-justify">
+                    Besides mainly supporting the fact that there are lots of companies with high eigenvector centrality at the west coast of the USA, there are also other large spots spread across. Most notably is the node on the top of the coast. The nodes are not at their exact location to avoid overlapping but it is Microsoft in Redmond close to Seattle.
+                    <br><br>
+                    So apart from the giants of the movie industry in Hollywood in the Los Angeles area the undirected version also shows many Californian companies like Apple with high centrality. That's because in an undirected graph Microsoft is the most central because of the high number of in-edges which influences the ranks among many big technology companies. When it comes to collaboration however movie companies are better at connecting "out" to others.
+                </font>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="content1">
+        <div class="content1-content">
+            <div class="container">
+                    <h2 id="communities" class="pull-right" style="margin-right:-120px;">
+                        <br>
+                        <span class="pull-right"><font color="#fdcc52"><b>Hidden</b></font> Communities </span>
+                    </h2>
+            </div>
+
+            <div class="container-fluid">
+                <font size="5" class="pull-left text-justify">
+                    <br>
+                    Companies today are usually categorized into branches, industries or type. However, hidden communities might actually provide a more truthful view of the companies.
+                    <br><br>
+                    The Louvain Algorithm as well as the Infomap algorithm is used to identify and extract communities. Communities can be any sort of branches generated between companies.
+                    As the Louvain Algorithm only applies to undirected graphs, the Infomap algorithm will be used as well for even better community detection, as it can also be run on directed graphs.
+                    <br><br>
+                    Around <b>60 hidden communities</b> were found by the Louvian Algorithm, while the Infomap algorithm were able to detect <b>2436</b> for the directed graph and <b>2095</b> for the undirected.<br>
+                    <br>
+                    The largest community detected is in the <b>automobile industry</b>. Furthermore, the other categories were identified in the following top 20 order:
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-2 text-left">
+                            <font size="6px" class="pull-left">Detected:</font>
+                            <br><br>
+                            <ol>
+                                <li>Automotive</li>
+                                <li>Entertainment</li>
+                                <li>Video game industry (1)</li>
+                                <li>Video game industry (2)</li>
+                                <li>Oil and gas</li>
+                                <li>Retail (1)</li>
+                                <li>Biotechnology</li>
+                                <li>Musical instruments</li>
+                                <li>Financial services</li>
+                                <li>Semiconductors</li>
+                                <li>Fashion</li>
+                                <li>Aerospace</li>
+                                <li>Retail (2)</li>
+                                <li>Media</li>
+                                <li>Japanese animation</li>
+                                <li>Telecommunications (1)</li>
+                                <li>Telecommunications (2)</li>
+                                <li>Retail (3)</li>
+                                <li>Shipping</li>
+                                <li>Telecommunications (3)</li>
+                            </ol>
+                        </div>
+
+                        <div class="col-md-4 text-left">
+                            <font size="6px" class="pull-left">Translation based on industry:</font>
+                            <br><br>
+                            <ol>
+                                <li>Cars</li>
+                                <li>Movies</li>
+                                <li>Video games</li>
+                                <li>Video consoles</li>
+                                <li>Oil & gas</li>
+                                <li>Groceries and supermarkets</li>
+                                <li>Pharmaceuticals & medicine</li>
+                                <li>Music industry</li>
+                                <li>Banking</li>
+                                <li>Computers & hardware</li>
+                                <li>Consumer goods</li>
+                                <li>Aerospace & Defense</li>
+                                <li>Clothing</li>
+                                <li>Media & TV</li>
+                                <li>Japanese animations & studios</li>
+                                <li>Social media</li>
+                                <li>Smartphones</li>
+                                <li>Fashion industry</li>
+                                <li>Travel & shipping</li>
+                                <li>Carriers</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <br>
+                    According to this list a very large community is actually in film and entertainment (second rank) when you account for the fact that the video games come as third biggest community it might explain the fact of high eigenvector centrality between entertainment companies.
+                    <br><br>
+                    To narrow the focus, three areas of interest will be further examined:<br><br>
+
+                    <ol>
+                        <li>Very central companies are predominantly located in the USA that makes it interesting to visualize.</li>
+                        <li>Although only containing a small subset a closer look at Denmark was taken since it is the location of our university.</li>
+                        <li>The top 5 largest communities that were discovered by the infomap algorithm.</li>
+                    </ol>
+                </font>
+            </div>
+
+            <br id="uscomp">
+            <div class="container-fluid">
+                <br>
+                    <h2 class="pull-left" style="margin-right:-120px;">    
+                        <span class="pull-left"><font color="#fdcc52"><b>United States</b></font> Company Network </span>
+                    </h2>
+                        
+                    <br><br><br><br><br>
+
+                    <font size="5" class="pull-left text-justify">
+                        For these three interesting visualizations there are different cases regarding node size and color:
+                        <br><br>
+
+                        <ol>
+                            <li>The size of nodes is determined by number of employees with a color from light yellow (low degree) to blue (high degree).</li>
+                            <li>Size of nodes is determined by closeness centrality, while the coloring is according to the community algorithm used in Gephi [3].</li>
+                            <li>Katz centrality for out-edges is used for node size. Color is determined by communities.</li>
+                        </ol>
+                    </font>
+
+                <br><br>
+                <font size="5" class="pull-left text-justify">
+                    <br>
+                    The US network has <b>7500</b> nodes and <b>11765</b> edges:<br><br>
+                </font>
+
+                <br>
+                <center>
+                    <img src="img/usmap.png" class="img-responsive">
+                </center>
+
+                <br>
+                <font size="5" class="pull-left text-justify">
+                    From the visualization it can be concluded that high degree nodes definitely generally have a higher number of employees. But there are companies like UPS (Georgia) that have a lower degree than Bank of America (close to UPS) or HP (LA area) but much more employees.
+                </font>
+
+            </div>
+
+            <br id="dkcomp">
+            <br><br>
+            <div class="container-fluid">
+                    <h2 class="pull-left" style="margin-right:-120px;">    
+                        <span class="pull-left"><font color="#fdcc52"><b>Denmark</b></font> Company Network </span>
+                    </h2>
+                        
+                <br><br><br><br><br>
+                <font size="5" class="pull-left text-justify">
+                    The Danish network has substantially less nodes and edges than the United States with <b>468</b> nodes and <b>201</b> edges.<br><br>
+
+                    Closeness centrality is a measure that wasn't introduced in the course curriculum but we wanted to know more about it. Closeness centrality is sum of the shortest path lengths between the node and all other nodes. Thus the node that's closest to all others is the most central. NetworkX also normalizes the closeness by the sum of minimum possible distances.
+                    <br><br>
+                    The top 10 most central companies according to closeness centrality:
+                </font>
+
+                <br><br><br><br>
+                <br><br><br><br>
+                <br><br><br><br><br>
+                <font size="5">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-4 text-left">
+                        Dansk Supermarked<br>
+                        Tor Line<br>
+                        Maersk<br>
+                        DFDS<br>
+                        Mols-Linien<br>
+                        DADES<br>
+                        Vestas<br>
+                        Fakta<br>
+                        Netto (store)<br>
+                        NNIT<br>
+                    </div>
+
+                    <div class="col-md-1 text-right">
+                        0.1240<br>
+                        0.1209<br>
+                        0.1152<br>
+                        0.1134<br>
+                        0.1119<br>
+                        0.1045<br>
+                        0.0973<br>
+                        0.0957<br>
+                        0.0896<br>
+                        0.0887<br>
+                    </div>
+                </div>
+                </font>
+
+                <br>
+                <font size="5" class="pull-left text-justify">
+                    The Dansk Supermarked company that also owns Føtex, Bilka, Netto and others has the shortest path to all other nodes.
+                </font>
+
+                <br>
+                <center>
+                    <img src="img/dk.png" class="img-responsive">
+                </center>
+
+            </div>
+
+
+            <br id="5largest">
+            <br><br>
+            <div class="container-fluid">
+                    <h2 class="pull-left" style="margin-right:-120px;">    
+                        <span class="pull-left"><font color="#fdcc52"><b>Top 5</b></font> Largest Communities </span>
+                    </h2>
+                        
+                <br><br><br><br><br>
+                <font size="5" class="pull-left text-justify">
+                    Nodes from the largest communities are added to a directed graph, which constitutes <b>3273</b> nodes and <b>3280</b> edges. At the same time, the Weakly Connected Component network were extracted. This network contains <b>1213</b> nodes and <b>3233</b> edges.
+                    <br><br>
+                    The Katz centrality is similar to eigenvector centrality as it generalizes it. A practical problem with eigenvector centrality is that it works well only if the graph is (strongly) connected. The problem with eigenvector centrality is nodes with no incoming edges have, by definition, a null eigenvector centrality score, and so have nodes that are pointed to by only nodes with a null centrality score [4]. Thus Katz suggested that every node gets a small centrality value now nodes with few links may still have high centrality if the linkers have a large centrality. High centrality nodes stay unaffected by the centrality of the linkers.
+                </font>
+
+                    <br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br>
+                    <font size="5px">
+                        <div class="row centeredRows">
+                            <div class="col-md-5 col-md-offset-1">
+                                <font size="6px" class="pull-left">In-degree Katz centrality:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        Ford Motor Company<br>
+                                        The Walt Disney Company<br>
+                                        Toyota<br>
+                                        Mercedes-Benz<br>
+                                        Chrysler<br>
+                                        Daimler AG<br>
+                                        Walt Disney Pictures<br>
+                                        Chevrolet<br>
+                                        Dodge<br>
+                                        Volkswagen<br>
+                                    </div>
+
+                                    <div class="col-md-3 text-right">
+                                        0.2787<br>
+                                        0.2075<br>
+                                        0.1816<br>
+                                        0.1713<br>
+                                        0.1597<br>
+                                        0.1376<br>
+                                        0.1324<br>
+                                        0.1318<br>
+                                        0.1269<br>
+                                        0.1219<br>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <font size="6px" class="pull-left">Out-degree Katz centrality:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        Warner Bros. Television<br>
+                                        Village Roadshow Pictures<br>
+                                        Spyglass Entertainment<br>
+                                        Dodge<br>
+                                        Amblin Entertainment<br>
+                                        The Herb Chambers Companies<br>
+                                        Warner Bros. Family Entertainment<br>
+                                        Imagine Entertainment<br>
+                                        The Kennedy/Marshall Company<br>
+                                        Ford Motor Company<br>
+                                    </div>
+
+                                    <div class="col-md-3 text-right">
+                                        0.1324<br>
+                                        0.1298<br>
+                                        0.1191<br>
+                                        0.1169<br>
+                                        0.1164<br>
+                                        0.1094<br>
+                                        0.1080<br>
+                                        0.1073<br>
+                                        0.0965<br>
+                                        0.0954<br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </font>
+
+
+
+                <br>
+                <font size="5" class="pull-left text-justify">
+                    Car brands and some entertainment companies including Walt Disney branches are under the high centrality nodes for in-edges. More dominant are entertainment companies for out-edges. The result also resembles the many subsidiaries of Warner Brothers.
+                </font>
+
+                <br>
+                <center>                    
+                    <font size="6">
+                        <br><br>
+                        Infomap
+                    </font>
+
+                    <img src="img/infomap.png" class="img-responsive">
+
+                    <font size="6">
+                        <br><br>
+                        Gephi
+                    </font>
+                    <img src="img/gephi.png" class="img-responsive">
+                </center>
+
+
+                <font size="5" class="pull-left text-justify">
+                    Comparing the two images it seems like the neither the fast unfolding nor the infomap algorithm had trouble finding the automotive community. Within the entertainment industry the fast unfolding algorithm detects other communities that make sense, separating television, entertainment and film studios. But the visualization in infomap seems more clear with more distinct clusters whereas the fast unfolding algorithm seems more chaotic.
+                </font>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section id="sentiment" class="graySection">
+        <div class="graySections-content">
+            <div class="container">
+                <h2 class="pull-left" style="margin-right:-120px;">
+                    <font size="6">Sentiment Analysis:</font><br><font color="#fdcc52"><b>Wordclouds</b></font> & TF-IDF<br>
+
+                    <font size="5" class="pull-left text-justify">
+                        Based on the network analysis, select companies were chosen to conduct a sentiment analysis on. Tweets about these companies were extracted to identify whether these companies still suffered bad press due to scandals. One such example is the scandal involving a worldwide recall of the Samsung Galaxy Note 7 due to explosions.
+                        <br><br>
+                        Tweets are collected and converted to a list of words that are needed to generate the TF-IDF. TF-IDF is a simple weighting scheme to find important words within a category. These can be visualized in word or tag clouds where words with higher tf–idf value appear bigger and thus are more important in the document. Our goal is to create that kind of wordcloud.
+                    </font>
+
+                    <br><br><br><br>
+
+                    <center>
+                        <img src="img/samsung_wc.png" class="img-responsive">
+                    </center>
+
+                    <br>
+
+                    <font size="5" class="pull-left text-justify">
+                        Word suchs as 'destroy', 'explosion', 'risk', 'flame' and 'battery' can all be found in the wordcloud. They are not the main subject but it is definitely something people still talk about. It also seems many people compare Samsung to Apple and the iPhone. Another dominating word is "grilling" which is related to a very recent scandal involving Samsung. Some news headlines below.
+                    </font>     
+
+                    <br><br><br>
+
+                    <center>
+                        <img src="img/samsung_grilling.png" class="img-responsive">
+                    </center>            
+                        
+                </h2>
+
+                <br>
+                <h2 id="happy" class="pull-left" style="margin-right:-120px;">
+                    <br id="happy">
+                    <font color="#fdcc52"><b>Happiness</b></font> in Companies<br>
+
+                    <font size="5" class="pull-left text-justify">
+                        The LabMT wordlist will be used for the sentiment analysis, as it contains happiness rankings and averages for common words. With this list the goal is to classify in which categories the texts about companies fit.
+                        <br><br>
+                        Based on this list, Samsung along with a lot of prominent companies achieved a sentiment score of around <b>5.6</b>. Looking at the top 10 words with highest and lowest happiness scores used in all tweets shows quite contradicting stories:
+                    </font>
+                    
+                    <br><br><br>
+                    <font size="5px">
+                        <div class="row centeredRows">
+                            <div class="col-md-4 col-md-offset-2">
+                                <font size="6px" class="pull-left">Happiest tweeted words:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        love<br>
+                                        happy<br>
+                                        excellent<br>
+                                        successful<br>
+                                        rainbow<br>
+                                        winning<br>
+                                        music<br>
+                                        weekend<br>
+                                        celebrating<br>
+                                        rich<br>
+                                    </div>
+
+                                    <div class="col-md-6 text-right">
+                                        8.42 / 29<br>
+                                        8.30 / 6<br>
+                                        8.18 / 7<br>
+                                        8.16 / 3<br>
+                                        8.10 / 1<br>
+                                        8.04 / 5<br>
+                                        8.02 / 6<br>
+                                        8.00 / 2<br>
+                                        8.00 / 1<br>
+                                        7.98 / 2<br>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <font size="6px" class="pull-left">Unhappiest tweeted words:</font>
+                                <br><br>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        suicide<br>
+                                        terrorist<br>
+                                        terrorism<br>
+                                        death<br>
+                                        kill<br>
+                                        died<br>
+                                        torture<br>
+                                        killing<br>
+                                        war<br>
+                                        failed<br>
+                                    </div>
+
+                                    <div class="col-md-6 text-right">
+                                        1.30 / 1<br>
+                                        1.30 / 1<br>
+                                        1.48 / 2<br>
+                                        1.54 / 5<br>
+                                        1.56 / 3<br>
+                                        1.56 / 2<br>
+                                        1.58 / 1<br>
+                                        1.70 / 1<br>
+                                        1.80 / 2<br>
+                                        1.84 / 1<br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <center>*(Happiness score / occurrences in tweets)</center>
+                    </font>
+
+                    <br>
+                    <font size="5" class="pull-left text-justify">
+                        These scores paint a very different picture of Samsung in this case. The reason the significant different in tweets might be due to all the commercials sent out on Twitter to paint a happier picture of Samsung - especially in a time filled with product recalls and scandals.
+                        <br><br>
+                        Each set of words gets an average score to find out if people tweet more happy or negatively about a company. Samsung scores on a weighted average <b>95.6</b> positive and <b>59.8</b> negative scores, meaning that tweets about Samsung are generally more positive than negative (within the tweets collected). Once again, these tweets include commercials and similar to portrait a different picture of the company. Similar methods are used in SEO.
+                    </font>
+
+                    <center>
+                        <img src="img/samsungPosNeg.png" class="img-responsive">
+                    </center> 
+                        
+                </h2>
+
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section class="content1">
+        <div class="content1-content">
+            <div class="container">
+                    <h2 class="pull-left" style="margin-right:-120px;">
+                        <br>
+                        <span class="pull-right">Sources</span>
+                    </h2>
+
+                <font size="4" class="pull-left text-justify">
+                    [1] "How Automakers Accelerated Out of the Great Depression". David Rhodes and Daniel Stelter. February 16, 2010. Last online accessed: 05.12.2016.<br>
+                    [2] Aerospace History. Wikipedia. Last online accessed: 06.12.2016.<br>
+                    [3] Vincent D. Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Etienne Lefebvre - Fast unfolding of communities in large networks (2008)<br>
+                    [4] University of Chieti-Pescara, Teaching notes. Last online accessed: 03.12.2016<br>
+                </font>
+
 
             </div>
         </div>
@@ -537,7 +1313,8 @@
                     <h4><strong>02805 Social graphs and interactions</strong></h4>
 
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Mohammad Al Atraktchi, Kevin Kaiser & Xiaoshen Hou 2016</p>
+                    <p class="text-muted">Copyright &copy; 2016</p>
+                    <p class="text-muted">Mohammad Al Atraktchi, Kevin Kaiser & Xiaoshen Hou</p>
                 </div>
             </div>
         </div>
